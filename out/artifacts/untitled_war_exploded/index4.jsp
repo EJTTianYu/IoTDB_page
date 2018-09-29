@@ -55,7 +55,7 @@
         <div class="col-xs-1" style="padding:0px;height: 100%;"></div>
         <div class="col-xs-9" style="padding:0px">
             <div class="panel" style="margin-top: 20px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
-                <h1>存储组 <strong>${info}</strong> 个</h1>
+                <h1>存储组 <strong><span style="color: #fcac45;font-weight: 600;font-size:35px">${info}</span></strong> 个</h1>
             </div>
             <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
 
@@ -83,7 +83,7 @@
                             <td><p style="text-align: right">
                                 <a href="#">查看 </a>
                                 <a href="#">查询 </a>
-                                <a href="#">删除 </a></p> </td></tr>
+                                </p> </td></tr>
                         <%}%>
                         </tbody>
 

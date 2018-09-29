@@ -50,12 +50,19 @@
                 </li>
             </ul>
         </div>
-        <a href="login.jsp"><button class="btn">登录</button></a>
         <div class="col-xs-1" style="padding:0px;height: 100%;"></div>
-        <div class="col-xs-9" style="padding:0px">
-            <div class="panel" style="margin-top: 20px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
-                <h1>存储组</h1>
-                <p><strong><span style="color: #fcac45;font-weight: 600;font-size:20px">${info}</span></strong> 个</p>
+        <div class="col-xs-9 " style="padding:0px">
+            <div class="panel row" style="margin-top: 20px;box-shadow: 3px 3px 3px rgba(0,0,0,.05);margin-left: 0px;margin-right: 0px">
+                <div class="col-xs-8"  style="padding:0px">
+                    <h1>存储组</h1>
+                    <p><strong><span style="color: #fcac45;font-weight: 600;font-size:20px">${info}</span></strong> 个</p>
+                </div>
+                <div class="col-xs-4" style="margin-top: 30px;padding:0px">
+                    <form action="Login">
+                        <p>数据源地址<input></p>
+                        <p>数据源接口<input type="password"><button class="btn" type="submit">连接</button></p>
+                    </form>
+                </div>
             </div>
             <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
 
@@ -79,31 +86,45 @@
                         <tr class="IoTr">
                             <td ></td>
                             <td></td>
+                            <td></td>
+
                         </tr>
                         <tr class="IoTr">
 
                             <td ></td>
                             <td></td>
+                            <td></td>
+
                         </tr>
                         <tr class="IoTr">
                             <td ></td>
                             <td></td>
+                            <td></td>
+
                         </tr>
                         <tr class="IoTr">
                             <td ></td>
                             <td></td>
+                            <td></td>
+
                         </tr>
                         <tr class="IoTr">
                             <td ></td>
                             <td></td>
+                            <td></td>
+
                         </tr>
                         <tr class="IoTr">
                             <td ></td>
                             <td></td>
+                            <td></td>
+
                         </tr>
                         <tr class="IoTr">
                             <td ></td>
                             <td></td>
+                            <td></td>
+
                         </tr>
                         </tbody>
 
