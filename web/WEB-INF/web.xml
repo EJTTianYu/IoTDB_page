@@ -29,10 +29,18 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>R4</servlet-name>
-        <servlet-class>TestSevlet</servlet-class>
+        <servlet-class>changePage</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>R4</servlet-name>
         <url-pattern>/getGroup</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>R5</servlet-name>
+        <servlet-class>Overview</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>R5</servlet-name>
+        <url-pattern>/Login</url-pattern>
     </servlet-mapping>
 </web-app>

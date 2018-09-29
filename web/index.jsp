@@ -50,7 +50,7 @@
                 </li>
             </ul>
         </div>
-        <a href="refresh1"><button class="btn">refresh</button> </a>
+        <a href="login.jsp"><button class="btn">登录</button></a>
         <div class="col-xs-1" style="padding:0px;height: 100%;"></div>
         <div class="col-xs-9" style="padding:0px">
             <div class="panel" style="margin-top: 20px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">

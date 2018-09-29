@@ -49,7 +49,6 @@
                 </li>
             </ul>
         </div>
-        <a href="refresh1"><button class="btn">refresh</button> </a>
         <div class="col-xs-1" style="padding:0px;height: 100%;"></div>
         <div class="col-xs-9" style="padding:0px">
             <div class="panel" style="margin-top: 20px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
@@ -86,7 +85,7 @@
                                 }
                                 for(int i=0;i<7;i++){
                             %>
-                            <tr class="IoTr"><td id="GName2"><%=request.getAttribute("groupName"+i)%></td><td><%=request.getAttribute("groupSe"+i)%></td></tr>
+                            <tr class="IoTr"><td id="GName2"><%=request.getAttribute("groupName"+i)%></td><td><%=request.getAttribute("groupSe"+i)%></td><td><button class="btn">查看</button></td></tr>
                             <%}%>
 
 

@@ -26,7 +26,6 @@ public class Overview extends HttpServlet {
             request.setAttribute("groupSe"+i,s[i].getSerNum());
 
         }
-
         request.getRequestDispatcher("index3.jsp").forward(request, response);
 
     }

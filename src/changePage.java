@@ -3,7 +3,7 @@ import IoTDB.Storage;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class TestSevlet extends javax.servlet.http.HttpServlet {
+public class changePage extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
     }
