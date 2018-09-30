@@ -1,4 +1,6 @@
-import IoTDB.Storage;
+package main.java;
+
+import main.java.IoTDB.Storage;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

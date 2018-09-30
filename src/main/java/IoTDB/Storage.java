@@ -1,4 +1,4 @@
-package IoTDB;
+package main.java.IoTDB;
 
 public class Storage {
     private String groupName;

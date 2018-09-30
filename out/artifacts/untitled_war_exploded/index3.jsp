@@ -71,6 +71,7 @@
                         <tr>
                             <th>GROUP_Name</th>
                             <th>TimeSe_Num</th>
+                            <th>TimeSe_Def</th>
                         </tr>
                         </thead>
                         <tbody>

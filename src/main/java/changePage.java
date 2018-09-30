@@ -1,4 +1,6 @@
-import IoTDB.Storage;
+package main.java;
+
+import main.java.IoTDB.Storage;
 
 import java.io.IOException;
 import java.io.PrintWriter;

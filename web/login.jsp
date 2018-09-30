@@ -61,8 +61,8 @@
             <div class="panel" style="margin-top: 20px;box-shadow: 3px 3px 3px rgba(0,0,0,.05);height: 500px">
 
                 <form action="Login">
-                    <p>数据源IP</p><input>
-                    <p>数据源接口</p><input>
+                    <p>数据源IP</p><input name="IP">
+                    <p>数据源接口</p><input name="port">
                     <button class="btn" type="submit">连接</button>
                 </form>
             </div>

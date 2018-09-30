@@ -59,8 +59,8 @@
                 </div>
                 <div class="col-xs-4" style="margin-top: 30px;padding:0px">
                     <form action="Login">
-                        <p>数据源地址<input></p>
-                        <p>数据源接口<input type="password"><button class="btn" type="submit">连接</button></p>
+                        <p>数据源地址<input name="IP"></p>
+                        <p>数据源接口<input name="port"><button class="btn" type="submit">连接</button></p>
                     </form>
                 </div>
             </div>
@@ -80,6 +80,7 @@
                         <tr>
                             <th>GROUP_Name</th>
                             <th>TimeSe_Num</th>
+                            <th>TimeSe_Def</th>
                         </tr>
                         </thead>
                         <tbody>
