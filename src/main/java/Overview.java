@@ -13,12 +13,16 @@ import main.java.IoTDB.Storage;
 
 @WebServlet(name = "Overview")
 public class Overview extends HttpServlet {
+    private String Ip;
+    private String Port;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String Ip=request.getParameter("IP");
-        String Port=request.getParameter("port");
+
+        Ip=request.getParameter("IP");
+        Port=request.getParameter("port");
+
         if(Ip.equals("192.168.130.7")&&Port.equals("3306")){
             int num=100;
             request.setAttribute("info", num);
@@ -30,14 +34,12 @@ public class Overview extends HttpServlet {
                 request.setAttribute("groupSe"+i,s[i].getSerNum());
 
             }
-            request.getRequestDispatcher("index3.jsp").forward(request, response);
+            request.getRequestDispatcher("indexData.jsp").forward(request, response);
             request.getSession().setAttribute("ip",Ip);
             request.getSession().setAttribute("porting",Port);
-
-
         }
-
-        request.getRequestDispatcher("index.jsp").forward(request, response);
-
+        else {
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
     }
 }

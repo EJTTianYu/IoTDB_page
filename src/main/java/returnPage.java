@@ -39,7 +39,7 @@ public class returnPage extends HttpServlet {
             }
 
         }
-        request.getRequestDispatcher("index3.jsp").forward(request, response);
+        request.getRequestDispatcher("indexData.jsp").forward(request, response);
 
     }
 }

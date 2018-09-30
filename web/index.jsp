@@ -44,7 +44,7 @@
                     <a href="index.jsp">总览</a>
                 </li>
                 <li>
-                    <a href="index2.jsp">数据管理</a>
+                    <a href="dataOperation.jsp">数据管理</a>
                 </li>
                 <li>
                     <a href="#">数据实时接入</a>

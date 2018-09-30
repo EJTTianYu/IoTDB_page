@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js" type=”text/javascript></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" type=”text/javascript></script>
     <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
@@ -41,44 +40,21 @@
         <div class="col-xs-1" style="padding:0px;height: 100%;">
             <ul class="sidebar-nav col-3">
                 <li>
-                    <a href="index.jsp">总览</a>
+                    <a href="indexData.jsp">总览</a>
                 </li>
                 <li>
-                    <a href="index2.jsp">数据管理</a>
+                    <a href="dataOperation.jsp">数据管理</a>
                 </li>
                 <li>
                     <a href="#">数据实时接入</a>
                 </li>
             </ul>
         </div>
-            <a href="refresh2"><button class="btn">refresh</button> </a>
+
             <div class="col-xs-1" style="padding:0px;height: 100%;"></div>
             <div class="col-xs-9" style="padding:0px">
-                <div class="panel" style="margin-top: 20px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
-                    <h1>存储组 <strong>${info}</strong> 个</h1>
-                </div>
-                <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
 
-                    <div class="col-xs-12 panel " style="padding: 0px;box-shadow:none;height: 420px" >
-
-                        <table class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th>存储组名</th>
-
-
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-
-                        </table>
-                    </div>
-                    </div>
-                </div>
-
-
+            </div>
         </div>
 
     </div>
