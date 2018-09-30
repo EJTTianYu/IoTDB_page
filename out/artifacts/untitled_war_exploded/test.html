@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        *{padding: 0; margin: 0}
+        .box{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.2);
+        }
+        .box1{
+            position: fixed;left: 50%; top: 25%;
+            border: 1px solid #000000;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="box1">
+        <a href="javascript:;" onclick="jQuery('.box').hide()">关闭</a>
+    </div>
+</div>
+<a href="javascript:;" onclick="jQuery('.box').show()" class="show">显示</a>
+</body>
+</html>

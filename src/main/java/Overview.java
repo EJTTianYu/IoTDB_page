@@ -37,7 +37,7 @@ public class Overview extends HttpServlet {
 
         }
 
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
 
     }
 }

@@ -82,7 +82,7 @@
                         <tr class="IoTr"><td id="GName2"><%=request.getAttribute("groupName"+i)%></td>
                             <td><p style="text-align: right">
                                 <a href="#">查看 </a>
-                                <a href="#">查询 </a>
+                                <a href="querySQL.jsp">查询 </a>
                                 </p> </td></tr>
                         <%}%>
                         </tbody>
