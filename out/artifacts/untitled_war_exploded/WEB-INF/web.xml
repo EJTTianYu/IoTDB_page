@@ -29,4 +29,12 @@
         <servlet-name>R3</servlet-name>
         <url-pattern>/lookData</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>R4</servlet-name>
+        <servlet-class>main.java.sqlProcess</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>R4</servlet-name>
+        <url-pattern>/SQLquery</url-pattern>
+    </servlet-mapping>
 </web-app>

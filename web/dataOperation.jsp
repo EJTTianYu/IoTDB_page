@@ -40,7 +40,7 @@
         <div class="col-xs-1" style="padding:0px;height: 100%;">
             <ul class="sidebar-nav col-3">
                 <li>
-                    <a href="indexData.jsp">总览</a>
+                    <a href="lookData">总览</a>
                 </li>
                 <li>
                     <a href="dataOperation.jsp">数据管理</a>
@@ -53,8 +53,14 @@
 
             <div class="col-xs-1" style="padding:0px;height: 100%;"></div>
             <div class="col-xs-9" style="padding:0px">
+                <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
+                <form action="SQLquery">
+                    <textarea style="width:90%;height: 200px;margin-top: 20px " placeholder="type your SQL here" name="sqlText"></textarea> <button type="submit" class="btn btn-default">Query</button>
+                </form>
+                </div>
+                <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05);margin-top: 20px;height:400px">
 
-            </div>
+                </div>
         </div>
 
     </div>

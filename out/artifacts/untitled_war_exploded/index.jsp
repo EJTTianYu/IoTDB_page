@@ -59,7 +59,7 @@
                     <p><strong><span style="color: #fcac45;font-weight: 600;font-size:20px">${info}</span></strong> 个</p>
                 </div>
                 <div class="col-xs-4" style="margin-top: 30px;padding:0px">
-                    <form action="Login">
+                    <form action="Login" method="post">
                         <p>数据源地址<input name="IP"></p>
                         <p>数据源接口<input name="port"><button class="btn" type="submit">连接</button></p>
                     </form>
