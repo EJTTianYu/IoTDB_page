@@ -1,5 +1,3 @@
-package main.java;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "sqlProcess")
+@WebServlet(name = "main.java.sqlProcess")
 public class sqlProcess extends HttpServlet {
     String sqlTxt;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -16,8 +14,15 @@ public class sqlProcess extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        sqlTxt = request.getParameter("sqlText");
-        PrintWriter out = response.getWriter(); //声明out对象，用来向客户端返回数据
-        out.print(sqlTxt);    //get请求返回html标签
+        String Ip = (String) request.getSession().getAttribute("ip");
+        String Port = (String) request.getSession().getAttribute("porting");
+        if (Ip == null && Port == null)
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        else{
+            sqlTxt = request.getParameter("sqlText");
+            request.getRequestDispatcher("dataComplete.jsp").forward(request, response);
+
+        }
+
     }
 }

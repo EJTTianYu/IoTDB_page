@@ -1,17 +1,17 @@
-package main.java;
-
+import cn.edu.tsinghua.iotdb.jdbc.TsfileJDBCConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Struct;
-import java.util.ArrayList;
+import java.sql.*;
+import java.util.HashSet;
+import java.util.Set;
 
-import main.java.IoTDB.Storage;
 
-@WebServlet(name = "Overview")
+
+@WebServlet(name = "main.java.Overview")
 public class Overview extends HttpServlet {
     private String Ip = "";
     private String Port = "";
@@ -19,6 +19,40 @@ public class Overview extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Ip = request.getParameter("IP");
         Port = request.getParameter("port");
+
+        Connection connection;
+        Statement statement;
+        ResultSet resultSet;
+
+
+        try {
+            Class.forName("cn.edu.tsinghua.iotdb.jdbc.TsfileDriver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        try{
+
+            connection= DriverManager.getConnection("jdbc:tsfile://"+Ip+":"+Port+"/","root","root");
+            statement=connection.createStatement();
+            DatabaseMetaData databaseMetaData=connection.getMetaData();
+            String metadata=databaseMetaData.toString();
+
+            resultSet=databaseMetaData.getColumns(null,null,"root.*",null);
+            Set<String> storageGroups=new HashSet<String>();
+
+            while (resultSet.next()){
+                String timeSeries=resultSet.getString(1);
+                String[] splits=timeSeries.split("\\.");
+                String sG=splits[0]+"."+splits[1];
+                storageGroups.add(sG);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
         if (Ip.equals("192.168.130.7") && Port.equals("3306")) {
             int num = 100;
             request.setAttribute("info", num);

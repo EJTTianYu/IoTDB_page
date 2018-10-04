@@ -7,6 +7,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="untitled" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$USER_HOME$/Desktop/iotdb-jdbc-0.7.0-jar-with-dependencies.jar" />
+        </element>
       </element>
     </root>
   </artifact>
