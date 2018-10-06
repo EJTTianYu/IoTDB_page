@@ -75,20 +75,22 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <%
-                                int a=(int)session.getAttribute("groupNum");
-                                int totalPage;
-                                if(a%10==0){
-                                    totalPage=a/10;
-                                }
-                                else {
-                                    totalPage=a/10+1;
-                                }
-                                for(int i=0;i<10;i++){
-                                    if(session.getAttribute("groupName"+i)!=null){
-                            %>
-                            <tr class="IoTr"><td id="GName2"><%=session.getAttribute("groupName"+i)%></td><td><%=session.getAttribute("groupNo"+i)%></td><td><button class="btn">查看</button></td></tr>
-                            <%}}%>
+                        <%
+                            int a=(int)session.getAttribute("groupNum");
+                            int cP=(int)request.getAttribute("cPage");
+                            int totalPage;
+                            if(a%10==0){
+                                totalPage=a/10;
+                            }
+                            else {
+                                totalPage=a/10+1;
+                            }
+                            for(int i=0;i<10;i++){
+                                int x=cP*10+i-11;
+                                if(session.getAttribute("groupName"+x)!=null){
+                        %>
+                        <tr class="IoTr"><td id="GName2"><%=session.getAttribute("groupName"+x)%></td><td><%=session.getAttribute("groupNo"+x)%></td><td><button class="btn">查看</button></td></tr>
+                        <%}}%>
 
 
 
@@ -119,9 +121,3 @@
         <p>ALL RIGHTS RESERVED.</p>
     </div>
 </div>
-
-
-
-
-</body>
-</html>

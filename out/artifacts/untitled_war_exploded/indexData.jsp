@@ -53,7 +53,7 @@
         <div class="col-xs-9" style="padding:0px">
             <div class="panel" style="margin-top: 20px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
                 <h1>存储组</h1>
-                <p><strong><span style="color: #fcac45;font-weight: 600;font-size:20px">${info}</span></strong> 个</p>
+                <p><strong><span style="color: #fcac45;font-weight: 600;font-size:20px">${groupNum}</span></strong> 个</p>
             </div>
             <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
 
@@ -76,18 +76,19 @@
                         </thead>
                         <tbody>
                             <%
-                                int a=(int)request.getAttribute("info");
+                                int a=(int)session.getAttribute("groupNum");
                                 int totalPage;
-                                if(a%7==0){
-                                    totalPage=a/7;
+                                if(a%10==0){
+                                    totalPage=a/10;
                                 }
                                 else {
-                                    totalPage=a/7+1;
+                                    totalPage=a/10+1;
                                 }
-                                for(int i=0;i<7;i++){
+                                for(int i=0;i<10;i++){
+                                    if(session.getAttribute("groupName"+i)!=null){
                             %>
-                            <tr class="IoTr"><td id="GName2"><%=request.getAttribute("groupName"+i)%></td><td><%=request.getAttribute("groupSe"+i)%></td><td><button class="btn">查看</button></td></tr>
-                            <%}%>
+                            <tr class="IoTr"><td id="GName2"><%=session.getAttribute("groupName"+i)%></td><td><%=session.getAttribute("groupNo"+i)%></td><td><button class="btn">查看</button></td></tr>
+                            <%}}%>
 
 
 

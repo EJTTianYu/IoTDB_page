@@ -43,17 +43,21 @@
     $('#table').bootstrapTable({
         pageSize:10,
         pageList:[4,5,6],
-        url:"data.json",
+        url:"data1.json",
         columns: [{
-            field: 'id',
-            title: 'Item ID'
+            field: 'Timeseries',
+            title: '时间序列'
         }, {
-            field: 'name',
-            title: 'Item Name'
+            field: 'Storage Group',
+            title: '存储组'
         }, {
-            field: 'price',
-            title: 'Item Price'
-        }],
+            field: 'DataType',
+            title: '数据类型'
+        },{
+            field: 'Encoding',
+            title: '编码方式'
+        }
+    ],
 
     });
 
