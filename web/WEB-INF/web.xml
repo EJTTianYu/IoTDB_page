@@ -21,6 +21,17 @@
         <servlet-name>R2</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>R5</servlet-name>
+        <servlet-class>showTime</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>R5</servlet-name>
+        <url-pattern>/chaKan</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>R3</servlet-name>
         <servlet-class>Overview</servlet-class>

@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,8 @@
     <link type="text/css" rel="stylesheet" href="css/simple-sidebar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.12.1/bootstrap-table.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js" type=”text/javascript></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" type=”text/javascript></script>
@@ -40,7 +41,7 @@
         <div class="col-xs-1" style="padding:0px;height: 100%;">
             <ul class="sidebar-nav col-3">
                 <li>
-                    <a href="lookData">总览</a>
+                    <a href="indexData.jsp">总览</a>
                 </li>
                 <li>
                     <a href="dataOperation.jsp">数据管理</a>
@@ -50,27 +51,52 @@
                 </li>
             </ul>
         </div>
-
-            <div class="col-xs-1" style="padding:0px;height: 100%;"></div>
-            <div class="col-xs-9" style="padding:0px">
-                <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
-                <form action="SQLquery">
-                    <textarea style="width:90%;height: 40px;margin-top: 20px " placeholder="type your SQL here" name="sqlText"></textarea> <button type="submit" class="btn btn-default">Query</button>
-                </form>
-                </div>
-                <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05);margin-top: 20px;height:550px">
-
-                </div>
+        <div class="col-xs-1" style="padding:0px;height: 100%;"></div>
+        <div class="col-xs-9 " style="padding:0px">
+            <table class="table table-hover" id="showTime" data-pagination="true" data-search="true">
+            </table>
         </div>
-
     </div>
 </div>
+<script>
+
+        $('#showTime').bootstrapTable('destroy').bootstrapTable({
+            pageSize: 10,
+            pageList: [4, 5, 6],
+
+            cache: false,
+            method: "get",
+            columns: [{
+                field: "Timeseries",
+                title: '时间序列'
+            }, {
+                field: 'Storage Group',
+                title: '存储组'
+            }, {
+                field: 'DataType',
+                title: '数据类型'
+            }, {
+                field: 'Encoding',
+                title: '编码方式'
+            }
+            ],
+            data: <%=request.getAttribute("json")%>
+
+
+        })
+
+
+
+
+
+</script>
 
 <div class="footer navbar-fixed-bottom" >
     <div class="container">
         <p>ALL RIGHTS RESERVED.</p>
     </div>
 </div>
+
 
 </body>
 </html>

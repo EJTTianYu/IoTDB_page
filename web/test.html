@@ -30,3 +30,47 @@
 <a href="javascript:;" onclick="jQuery('.box').show()" class="show">显示</a>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-table.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "data/data2.json",
+                dataType: "json",
+                success: function (msg) {
+                    $("#table").bootstrapTable('load', msg);
+                },
+                error: function () {
+                    //alert("错误");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<table data-toggle="table" id="table" data-pagination="true">
+    <thead>
+    <tr>
+        <th data-field="id">编号</th>
+        <th data-field="name">名称</th>
+        <th data-field="price">价格</th>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>
+<%List<String> fileds =(ArrayList)request.getAttribute("field");%>
+    <%=fileds.get(0)%>
+    <%=request.getAttribute("return")%>
+    <%=request.getAttribute("fieldNum")%>

@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -55,32 +57,35 @@
         <div class="col-xs-9" style="padding:0px">
             <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
                 <form action="SQLquery">
-                    <textarea style="width:90%;height: 200px;margin-top: 20px " placeholder="type your SQL here" name="sqlText"></textarea> <button type="submit" class="btn btn-default">Query</button>
+                    <textarea style="width:90%;height: 40px;margin-top: 20px " placeholder="type your SQL here" name="sqlText"></textarea> <button type="submit" class="btn btn-default">Query</button>
                 </form>
             </div>
-            <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05);margin-top: 20px;height:400px;overflow: auto">
+            <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05);margin-top: 20px;height:550px;overflow: auto">
                 <table class="table table-hover" id="table" data-pagination="true" data-search="true">
                 </table>
+
+                <%List<String> fileds =(ArrayList)request.getAttribute("field");%>
             </div>
         </div>
 
     </div>
 </div>
 <script>
+
     $('#table').bootstrapTable({
         pageSize:10,
         pageList:[4,5,6],
-        url:"data.json",
-        columns: [{
-            field: 'id',
-            title: 'Item ID'
-        }, {
-            field: 'name',
-            title: 'Item Name'
-        }, {
-            field: 'price',
-            title: 'Item Price'
-        }],
+        columns:[
+            <%int x=(int)request.getAttribute("fieldNum");
+                for(int i=0;i<x;i++){
+            %>
+                    {field:"<%=fileds.get(i)%>",
+                     title:"<%=fileds.get(i)%>"
+                    },
+            <%}%>
+
+        ],
+        data: <%=request.getAttribute("return")%>,
 
     });
 

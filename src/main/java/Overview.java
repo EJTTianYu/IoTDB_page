@@ -70,7 +70,7 @@ public class Overview extends HttpServlet {
                         ResultSet resultSet1=statement1.getResultSet();
                         ResultSetMetaData metaData=resultSet1.getMetaData();
                         int column=metaData.getColumnCount();
-                        System.out.println(column);
+                        //System.out.println(column);
                         while(resultSet1.next()){
                             timeSeNum++;
                             JSONObject jsonObject=new JSONObject();
@@ -92,10 +92,10 @@ public class Overview extends HttpServlet {
 
             System.out.println(array.toString());
             //PrintWriter writer = new PrintWriter("data.txt", "UTF-8");
-            //writer.write("woccccc");
+            //writer.write("woccccc");/Users/tianyu/untitled/
             //writer.close();
             //String file="/Users/tianyu/untitled/stream.txt";
-            String file="/Users/tianyu/untitled/data1.json";
+            String file="/Users/tianyu/untitled/web/data1.json";
             String charSet="UTF-8";
             //写字符转换成字节流
             FileOutputStream fileWriter=new FileOutputStream(file);
@@ -150,24 +150,9 @@ public class Overview extends HttpServlet {
         if (Ip == null && Port == null)
             request.getRequestDispatcher("index.jsp").forward(request, response);
         else {
-            if (Ip.equals("192.168.130.7") && Port.equals("3306")) {
-                int num = 100;
-                request.setAttribute("info", num);
-                Storage[] s = new Storage[num];
-                for (int i = 0; i < num; i++) {
-                    Storage e = new Storage("IoTDB" + i, i + 10000);
-                    s[i] = e;
-                    request.setAttribute("groupName" + i, s[i].getGroupName());
-                    request.setAttribute("groupSe" + i, s[i].getSerNum());
 
-                }
                 request.getRequestDispatcher("indexData.jsp").forward(request, response);
-                request.getSession().setAttribute("ip", Ip);
-                request.getSession().setAttribute("porting", Port);
-            } else {
 
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-            }
         }
     }
 }

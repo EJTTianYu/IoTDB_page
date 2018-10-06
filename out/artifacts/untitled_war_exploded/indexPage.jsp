@@ -39,7 +39,7 @@
         <div class="col-xs-1" style="padding:0px;height: 100%;">
             <ul class="sidebar-nav col-3">
                 <li>
-                    <a href="index.jsp">总览</a>
+                    <a href="indexData.jsp">总览</a>
                 </li>
                 <li>
                     <a href="dataOperation.jsp">数据管理</a>
@@ -86,10 +86,10 @@
                                 totalPage=a/10+1;
                             }
                             for(int i=0;i<10;i++){
-                                int x=cP*10+i-11;
+                                int x=cP*10+i-10;
                                 if(session.getAttribute("groupName"+x)!=null){
                         %>
-                        <tr class="IoTr"><td id="GName2"><%=session.getAttribute("groupName"+x)%></td><td><%=session.getAttribute("groupNo"+x)%></td><td><button class="btn">查看</button></td></tr>
+                        <tr class="IoTr"><td id="GName2"><%=session.getAttribute("groupName"+x)%></td><td><%=session.getAttribute("groupNo"+x)%></td><td><a href="chaKan?action=<%=session.getAttribute("groupName"+x)%>"><button class="btn" >查看</button></a></td></tr>
                         <%}}%>
 
 
