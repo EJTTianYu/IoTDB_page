@@ -87,7 +87,10 @@
         ],
         data: <%=request.getAttribute("return")%>,
 
+
     });
+    $('#table').bootstrapTable("hideLoading");
+
 
 </script>
 <div class="footer navbar-fixed-bottom" >

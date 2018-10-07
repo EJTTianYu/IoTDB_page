@@ -14,18 +14,21 @@ import java.util.List;
 
 @WebServlet(name = "main.java.sqlProcess")
 public class sqlProcess extends HttpServlet {
-    String sqlTxt;
-    Connection connection;
-    Statement statement;
-    ResultSet resultSet;
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String sqlTxt;
+        Connection connection;
+        Statement statement;
+        ResultSet resultSet;
+
         String Ip = (String) request.getSession().getAttribute("ip");
         String Port = (String) request.getSession().getAttribute("porting");
+
         if (Ip == null && Port == null)
             request.getRequestDispatcher("index.jsp").forward(request, response);
         else{
@@ -42,13 +45,16 @@ public class sqlProcess extends HttpServlet {
                 //System.out.println(sqlTxt);
                 connection= DriverManager.getConnection("jdbc:tsfile://"+Ip+":"+Port+"/","root","root");
                 statement=connection.createStatement();
+                System.out.println(0);
                 boolean hasResultSet=statement.execute(sqlTxt);
+
+                System.out.println(1);
                 if(hasResultSet) {
                     resultSet = statement.getResultSet();
                     ResultSetMetaData metaData=resultSet.getMetaData();
-                    System.out.println(metaData);
+                    //System.out.println(metaData);
                     int column=metaData.getColumnCount();
-                    System.out.println(column);
+                    //System.out.println(column);
 
                     for(int j=1;j<=column;j++){
                         String columnName=metaData.getColumnLabel(j);
@@ -67,7 +73,7 @@ public class sqlProcess extends HttpServlet {
                         }
                         array.put(jsonObject);
                     }
-                    System.out.println(array.toString());
+                    //System.out.println(array.toString());
                     //System.out.println(columns);
                     request.setAttribute("field",columns);
                     request.setAttribute("fieldNum",columns.size());
@@ -83,6 +89,7 @@ public class sqlProcess extends HttpServlet {
 
             }
             catch (Exception e){
+                request.getRequestDispatcher("dataOperation.jsp").forward(request, response);
 
             }
         }

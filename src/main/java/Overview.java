@@ -90,7 +90,7 @@ public class Overview extends HttpServlet {
                 break;
             }
 
-            System.out.println(array.toString());
+            //System.out.println(array.toString());
             //PrintWriter writer = new PrintWriter("data.txt", "UTF-8");
             //writer.write("woccccc");/Users/tianyu/untitled/
             //writer.close();
@@ -130,15 +130,18 @@ public class Overview extends HttpServlet {
                         }
                         break;
                     }*/
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-
-
             request.getRequestDispatcher("indexData.jsp").forward(request, response);
             request.getSession().setAttribute("ip", Ip);
             request.getSession().setAttribute("porting", Port);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+
+        }
+
+
+
 
 
 
