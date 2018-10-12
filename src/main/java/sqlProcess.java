@@ -45,7 +45,7 @@ public class sqlProcess extends HttpServlet {
                 //System.out.println(sqlTxt);
                 connection= DriverManager.getConnection("jdbc:tsfile://"+Ip+":"+Port+"/","root","root");
                 statement=connection.createStatement();
-                System.out.println(0);
+                //System.out.println(0);
                 boolean hasResultSet=statement.execute(sqlTxt);
 
                 System.out.println(1);
@@ -82,13 +82,17 @@ public class sqlProcess extends HttpServlet {
                     request.getRequestDispatcher("dataComplete.jsp").forward(request, response);
                 }
                 else{
+                    String suc="SQL executed successfully";
+                    request.setAttribute("Suc",suc);
                     request.getRequestDispatcher("dataOperation.jsp").forward(request, response);
-
                 }
 
 
             }
             catch (Exception e){
+                System.out.println("Test");
+                String str="SQL is not defined";
+                request.setAttribute("Error",str);
                 request.getRequestDispatcher("dataOperation.jsp").forward(request, response);
 
             }

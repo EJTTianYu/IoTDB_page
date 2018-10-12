@@ -46,9 +46,7 @@
                 <li>
                     <a href="dataOperation.jsp">数据管理</a>
                 </li>
-                <li>
-                    <a href="#">数据实时接入</a>
-                </li>
+
             </ul>
         </div>
         <div class="col-xs-1" style="padding:0px;height: 100%;"></div>

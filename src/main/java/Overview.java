@@ -46,7 +46,8 @@ public class Overview extends HttpServlet {
 
 
         try{
-
+            //System.out.println(Ip);
+            //System.out.println(Port);
             connection= DriverManager.getConnection("jdbc:tsfile://"+Ip+":"+Port+"/","root","root");
             statement=connection.createStatement();
             statement1=connection.createStatement();
@@ -95,8 +96,8 @@ public class Overview extends HttpServlet {
             //writer.write("woccccc");/Users/tianyu/untitled/
             //writer.close();
             //String file="/Users/tianyu/untitled/stream.txt";
-            String file="/Users/tianyu/untitled/web/data1.json";
-            String charSet="UTF-8";
+            //String file="/Users/tianyu/untitled/web/data1.json";
+            /*String charSet="UTF-8";
             //写字符转换成字节流
             FileOutputStream fileWriter=new FileOutputStream(file);
             OutputStreamWriter writer=new OutputStreamWriter(fileWriter, charSet);
@@ -106,7 +107,7 @@ public class Overview extends HttpServlet {
                 // TODO: handle exception
             }finally{
                 writer.close();
-            }
+            }*/
 
             request.getSession().setAttribute("groupNum",storagenum);
 
@@ -136,6 +137,7 @@ public class Overview extends HttpServlet {
         }
         catch (Exception e){
             e.printStackTrace();
+            request.setAttribute("errorC","Error");
             request.getRequestDispatcher("index.jsp").forward(request, response);
 
         }
@@ -156,6 +158,8 @@ public class Overview extends HttpServlet {
 
                 request.getRequestDispatcher("indexData.jsp").forward(request, response);
 
-        }
+            }
+
+
     }
 }

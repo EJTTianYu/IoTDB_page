@@ -45,9 +45,7 @@
                 <li>
                     <a href="dataOperation.jsp">数据管理</a>
                 </li>
-                <li>
-                    <a href="#">数据实时接入</a>
-                </li>
+
             </ul>
         </div>
 
@@ -55,7 +53,7 @@
             <div class="col-xs-9" style="padding:0px">
                 <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05)">
                 <form action="SQLquery">
-                    <textarea style="width:90%;height: 40px;margin-top: 20px " placeholder="type your SQL here" name="sqlText"></textarea> <button type="submit" class="btn btn-default">Query</button>
+                    <textarea style="width:90%;height: 40px;margin-top: 20px " placeholder="type your SQL here" name="sqlText"></textarea> <button type="submit" class="btn btn-default" style="margin-bottom: 30px;margin-left: 10px">Query</button>
                 </form>
                 </div>
                 <div class="row" style="margin-left: 0px;margin-right: 0px;box-shadow: 3px 3px 3px rgba(0,0,0,.05);margin-top: 20px;height:550px">
@@ -65,6 +63,24 @@
 
     </div>
 </div>
+<% try{
+    String suc1=(String)request.getAttribute("Suc");
+    if(suc1!=null){
+%>
+        <script>alert("SQL executed successfully");</script>
+<%}
+}catch (Exception e){
+    request.getRequestDispatcher("dataOperation.jsp").forward(request, response);
+}%>
+<% try{
+    String error=(String)request.getAttribute("Error");
+    if(error!=null){
+        %>
+        <script>alert("SQL is not defined");</script>
+<%}
+}catch (Exception e){
+    request.getRequestDispatcher("dataOperation.jsp").forward(request, response);
+}%>
 
 <div class="footer navbar-fixed-bottom" >
     <div class="container">

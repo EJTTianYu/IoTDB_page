@@ -74,3 +74,20 @@
     <%=fileds.get(0)%>
     <%=request.getAttribute("return")%>
     <%=request.getAttribute("fieldNum")%>
+
+    <li>
+        <a href="#">数据实时接入</a>
+    </li>
+
+    <div class="panel row" style="margin-top: 20px;box-shadow: 3px 3px 3px rgba(0,0,0,.05);margin-left: 0px;margin-right: 0px">
+        <div class="col-xs-8"  style="padding:0px">
+            <h1>存储组</h1>
+            <p><strong><span style="color: #fcac45;font-weight: 600;font-size:20px">${groupNum}</span></strong> 个</p>
+        </div>
+        <div class="col-xs-4" style="margin-top: 30px;padding:0px">
+            <form action="Login" method="post">
+                <p>数据源地址<input name="IP"></p>
+                <p>数据源接口<input name="port"><button class="btn" type="submit">连接</button></p>
+            </form>
+        </div>
+    </div>
